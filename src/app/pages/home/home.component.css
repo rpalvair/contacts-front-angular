@@ -1,4 +1,12 @@
 .card {
   margin-top: 20px;
-  padding : 40px;
+  padding : 10px;
+}
+
+.actions fa-icon:not(:first-child) {
+  margin-left:10px;
+}
+
+.actions fa-icon {
+  cursor: pointer;
 }
