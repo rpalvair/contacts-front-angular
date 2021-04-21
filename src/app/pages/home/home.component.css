@@ -1,6 +1,5 @@
 .card {
   margin-top: 20px;
-  padding : 10px;
 }
 
 .actions fa-icon:not(:first-child) {
@@ -9,4 +8,8 @@
 
 .actions fa-icon {
   cursor: pointer;
+}
+
+.buttons {
+  margin-top:20px;
 }

@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="offset-3 col-lg-6">
+    <div class="col-lg-3">
+      <div class="buttons">
+        <a href="#" class="btn btn-primary" [routerLink]="['/contact/add-contact']">Add new contact</a>
+      </div>
+    </div>
+    <div class="col-lg-6">
       <div *ngFor="let contact of contacts" class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{contact.firstName}} {{contact.lastName}}</h5>
