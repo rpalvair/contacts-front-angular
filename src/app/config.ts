@@ -3,7 +3,8 @@ export const config = {
     contacts: {
       read: "http://localhost:8080/contacts",
       delete: "http://localhost:8080/contacts/delete-contact",
-      edit: "http://localhost:8080/contacts/update-contact"
+      edit: "http://localhost:8080/contacts/update-contact",
+      create:"http://localhost:8080/contacts/create-contact"
     }
   }
 }
