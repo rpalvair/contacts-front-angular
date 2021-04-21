@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-contact',
@@ -8,10 +9,25 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 })
 export class EditContactComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  contactForm: FormGroup;
+
+  constructor(private activatedRoute: ActivatedRoute,
+    private formBuilder: FormBuilder) {
+    this.contactForm = this.formBuilder.group(
+      {
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        age: ['', Validators.required]
+      }
+    )
+  }
 
   ngOnInit(): void {
     console.log("contact id", this.activatedRoute.snapshot.params.id)
+  }
+
+  onSubmit() {
+    console.log("submit",this.contactForm.value)
   }
 
 }
