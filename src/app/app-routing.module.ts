@@ -1,3 +1,4 @@
+import { EditContactComponent } from './pages/contact/edit-contact/edit-contact.component';
 import { AddContactComponent } from './pages/contact/add-contact/add-contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: "contact/add-contact", component: AddContactComponent
+  },
+  {
+    path: "contact/edit-contact/:id", component: EditContactComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' }
