@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { config } from "../../config";
 
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   faTrash = faTrash
   faEdit = faEdit
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.loadContacts()
@@ -34,5 +35,10 @@ export class HomeComponent implements OnInit {
       console.log("data", data)
       this.contacts = data
     })
+  }
+
+  editContact(contact: any) {
+    console.log("edit contact", contact)
+    this.router.navigateByUrl("/contact/edit-contact/" + contact.id)
   }
 }

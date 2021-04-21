@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddContactComponent } from './pages/contact/add-contact/add-contact.component';
+import { EditContactComponent } from './pages/contact/edit-contact/edit-contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import { AddContactComponent } from './pages/contact/add-contact/add-contact.com
     TheHeaderComponent,
     TheFooterComponent,
     HomeComponent,
-    AddContactComponent
+    AddContactComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
