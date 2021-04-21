@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { config } from "../../config";
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,21 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get("http://localhost:8080/contacts").subscribe((data: any) => {
+    this.loadContacts()
+  }
+
+  deleteContact(contact: any) {
+    console.log("delete contact", contact)
+    this.http.delete(config.endpoints.contacts.delete + "/" + contact.id).subscribe((data: any) => {
+      console.log("data", data)
+      this.loadContacts()
+    })
+  }
+
+  loadContacts() {
+    this.http.get(config.endpoints.contacts.read).subscribe((data: any) => {
       console.log("data", data)
       this.contacts = data
     })
   }
-
 }
