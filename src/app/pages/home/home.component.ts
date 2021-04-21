@@ -39,6 +39,6 @@ export class HomeComponent implements OnInit {
 
   editContact(contact: any) {
     console.log("edit contact", contact)
-    this.router.navigateByUrl("/contact/edit-contact/" + contact.id)
+    this.router.navigateByUrl("/edit-contact/" + contact.id)
   }
 }
