@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
+import { dependencies } from '../../../../package.json';
 @Component({
   selector: 'the-header',
   templateUrl: './the-header.component.html',
   styleUrls: ['./the-header.component.css']
 })
 export class TheHeaderComponent implements OnInit {
+  version = dependencies['@angular/core'].substring(1)
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
