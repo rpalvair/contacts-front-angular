@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import { config } from "../../config";
+import { config } from "../../../config";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-contacts-list',
+  templateUrl: './contacts-list.component.html',
+  styleUrls: ['./contacts-list.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ContactsListComponent implements OnInit {
 
   contacts: any[] = [];
 

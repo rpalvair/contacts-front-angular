@@ -35,7 +35,7 @@ export class AddContactComponent implements OnInit {
         ...contact
       }).subscribe(data => {
         console.log("data", data)
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/")
       })
     }
   }

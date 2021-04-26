@@ -1,12 +1,12 @@
+import { ContactsListComponent } from './pages/contact/contacts-list/contacts-list.component';
 import { EditContactComponent } from './pages/contact/edit-contact/edit-contact.component';
 import { AddContactComponent } from './pages/contact/add-contact/add-contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: "home", component: HomeComponent
+    path: "", component: ContactsListComponent
   },
   {
     path: "add-contact", component: AddContactComponent
@@ -14,8 +14,7 @@ const routes: Routes = [
   {
     path: "edit-contact/:id", component: EditContactComponent
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
