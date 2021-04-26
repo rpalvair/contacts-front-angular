@@ -41,7 +41,7 @@ export class EditContactComponent implements OnInit {
         id: this.contact.id
       }).subscribe(data => {
         console.log("data", data)
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/")
       })
     }
   }
