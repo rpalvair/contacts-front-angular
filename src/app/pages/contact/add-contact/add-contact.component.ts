@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { config } from "../../../config";
 @Component({
@@ -10,9 +10,9 @@ import { config } from "../../../config";
 })
 export class AddContactComponent implements OnInit {
 
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient,
+  constructor(private formBuilder: UntypedFormBuilder, private httpClient: HttpClient,
     private router: Router) {
     this.contactForm = this.formBuilder.group(
       {
