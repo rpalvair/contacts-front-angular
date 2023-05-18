@@ -28,4 +28,9 @@ describe('ContactsListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render button to add new contact', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.buttons > .btn.btn-primary').textContent).toContain('Add new contact');
+  })
 });
