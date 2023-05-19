@@ -5,7 +5,7 @@ import { TheHeaderComponent } from './the-header.component';
 describe('TheHeaderComponent', () => {
   let component: TheHeaderComponent;
   let fixture: ComponentFixture<TheHeaderComponent>;
-  let version = "14.3.0";
+  let version = "15.2.9";
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
