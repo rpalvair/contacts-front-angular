@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { config } from "../../../config";
 
 @Component({
@@ -28,7 +29,14 @@ export class EditContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadContact()
+    this.loadContact().subscribe((data: any) => {
+      this.contact = data
+      this.contactForm.patchValue({
+        firstName: this.contact.firstName,
+        lastName: this.contact.lastName,
+        age: this.contact.age
+      })
+    })
   }
 
   onSubmit() {
@@ -46,16 +54,9 @@ export class EditContactComponent implements OnInit {
     }
   }
 
-  loadContact() {
+  loadContact(): Observable<any> {
     let id = this.activatedRoute.snapshot.params.id
-    console.log("contact id", id)
-    this.httpClient.get(config.endpoints.contacts.read + "/" + id).subscribe((data: any) => {
-      this.contact = data
-      this.contactForm.patchValue({
-        firstName: this.contact.firstName,
-        lastName: this.contact.lastName,
-        age: this.contact.age
-      })
-    })
+    console.log("Load contact id", id)
+    return this.httpClient.get(config.endpoints.contacts.read + "/" + id);
   }
 }
